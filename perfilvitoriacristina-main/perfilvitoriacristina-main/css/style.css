@@ -1,0 +1,203 @@
+/*Google Fonts*/ /* Atalho pra Comentar Shift + ALT + A */
+
+@import url("https://fonts.googleapis.com/css2?family=Playwhite+IT+Moderna:wght@100..family=Poppins:ital,wght@0,100;0;200;0,300;0,400;0,500;0;600;0;700,0;800,0;900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300...900&display=swap");
+/* variaves das cores */
+/* tema dark */
+
+:root,
+:root[data-theme="dark"] {
+  --primary-color: #f0f0f0; /*cor principal Textos*/
+  --primary-bg-color: #171111; /*cor principal Fundo*/
+  /* bg = background == cor do Fundo */
+  --secondary-bg-color: #28292e;
+  --primary-border-color: #28292e;
+  --secondary-border-color: #56575a;
+  --title-color: #f0f0f0;
+
+  --link-color: #8f8f8f;
+  --link-hover: #f0f0f0;
+
+  --icon-color: #c7c8c9;
+}
+/* TEMA LIGHT */
+:root[data-theme="light"] {
+  --primary-color: #0d0c09; /* cor principal textos */
+
+  --primary-bg-color: #f0f2f5;
+  --secondary-bg-color: #c7c8c9;
+
+  --primary-border-color: #c7c8c9;
+  --secondary-border-color: #9a9a9c;
+
+  --title-color: #0b0b0f;
+  --link-hover: #a3a2a2;
+  --link-color: #0b0b0f;
+  --icon-color: #56575a;
+}
+/* reset css */
+
+* {
+  margin: 0; /* margem */
+  padding: 0px; /*preenchimento */
+  box-sizing: border-box;
+  vertical-align: baseline;
+  list-style-type: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-bg-color) transparent;
+}
+body {
+  background: var(--primary-bg-color); /*cor fundo*/
+  color: var(--primary-color); /* cor geral dos textos*/
+  font-family: "playwrite", tahoma, geneva, Verdana, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+i {
+  color: var(--icon-color);
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  /*coloca oconteudo em linha e permite a quebra de linha. */
+  justify-content: space-between;
+  /* os intens desntro do container flexivel
+   serão distribuidos de maneira uniforme ao longo de eixo
+   principal,com espaços igual entre eles. */
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+  /* sobreposição*/
+}
+.header-logo .logo2{
+  width: 15rem;
+  height: 3.25rem;
+  margin-left:20px;
+  position: relative;
+  bottom: 10px;
+}
+.header-logo .logo3{
+  width: 10.25rem;
+  height: 4.25rem;
+}
+  
+
+html[data-theme='light'] .logo2{
+    filter: invert(1);
+}
+html[data-theme='light'] .logo3{
+  filter: invert(1);
+}
+
+#toggleTheme {
+  font-size: 1.5rem;
+  color: var(--icon-color);
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.menu {
+  display: flex;
+  /* torna o elemento um flex container automaticamente
+transformando todos os filhos direitos em flex itens*/
+  align-items: center;
+  background: var(--primary-bg-color);
+  gap: 1rem;
+}
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.menu-mobile {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  justify-content: space-between;
+  border-top: 1px solid var(--primary-border-color);
+}
+.menu-mobile .menu-link {
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+.menu-link.active .menu-icon,
+.menu-link.active .menu-text,
+.menu-link:hover .menu-icon,
+.menu-link:hover .menu-text {
+  color: var(--link-hover);
+}
+
+.menu-icon,
+.menu-text {
+  color: var(--link-color);
+  font-weight: 600;
+}
+.menu-icon {
+  font-size: 1.5rem;
+}
+
+.menu-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.header-nav {
+  display: none;
+}
+.menu-principal {
+  gap: 1rem;
+}
+/*==== ---------------------- ====== */
+
+/* css responsive */
+@media (min-width: 768px) {
+  .header {
+    position: fixed;
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 1rem 6rem;
+  }
+  .header-nav {
+    display: flex;
+  }
+}
+ 
+.menu-social{
+  gap: 1rem;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.62rem;
+    width: 100%;
+    background: transparent;
+    border-radius:3rem;
+    color: var(--primay-color);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    transition: ease-in-out .3s;  
+}
+.btn-primay{
+  border: 1px solid var(--secondary-border-color);
+}
+.btn:hover{
+  transform: scale(1.05);
+  transition: ease-in-out .3s;
+}
+.btn span, .bth i{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+.btn-primay span{
+  color: va
+}
